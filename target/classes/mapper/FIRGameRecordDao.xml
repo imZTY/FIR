@@ -19,7 +19,7 @@
         SELECT *
         FROM record_firgame r LEFT JOIN user_firgame u
         ON r.user_id=u.user_id
-        WHERE r.result=-1
+        WHERE r.result=1
         AND r.user_id=#{userId}
         ORDER BY finish_time DESC;
     </select>
