@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         id="WebApp_ID" version="3.1">
+  <display-name>dwrtest</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+  <listener>
+    <listener-class>
+      org.directwebremoting.servlet.EfficientShutdownServletContextAttributeListener
+    </listener-class>
+  </listener>
+  <listener>
+    <listener-class>
+      org.directwebremoting.servlet.EfficientShutdownServletContextListener
+    </listener-class>
+  </listener>
+
+  <!--用maven创建的web-app需要修改servlet的版本为3.1-->
+  <!--配置DispatcherServlet-->
+  <servlet>
+    <servlet-name>seckill-dispatcher</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <!--
+        配置SpringMVC 需要配置的文件
+        spring-dao.xml，spring-service.xml,spring-web.xml
+        Mybites -> spring -> springMvc
+    -->
+
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:spring/spring-*.xml</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>seckill-dispatcher</servlet-name>
+  <!--默认匹配所有请求-->
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>dwr</servlet-name>
+    <!-- version 2 * -->
+    <!-- <servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class> -->
+    <servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <!-- 使用服务器反转AJAX  -->
+    <init-param>
+      <param-name>activeReverseAjaxEnabled</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <!-- 是能够从其他域请求true：开启； false：关闭 -->
+    <init-param>
+      <param-name>crossDomainSessionSecurity</param-name>
+      <param-value>false</param-value>
+    </init-param>
+    <!-- 允许远程调用js -->
+    <init-param>
+      <param-name>allowScriptTagRemoting</param-name>
+      <param-value>true</param-value>
+    </init-param>
+
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>dwr</servlet-name>
+    <url-pattern>/dwr/*</url-pattern>
+  </servlet-mapping>
+
+</web-app>

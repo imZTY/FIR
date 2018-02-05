@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎来到五子棋的世界</title>
+  <link rel="stylesheet" href="css/login.css">
+    <style>
+        .start {
+
+            width: 150px;
+            height: 40px;
+            margin-left: -75px;
+            margin-top: -20px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 40px;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            border-radius: 2px;
+            cursor: pointer;
+            text-decoration: none;
+            color:#000;
+        }
+.start:hover{
+    width: 152px;
+    height: 42px;
+}
+.onlineNumber{
+    width: 150px;
+    overflow: hidden;
+    position: absolute;
+           bottom: 5%;
+            left: 50%;
+            margin-left: -45px;
+}
+.exit{
+    width: 150px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 2%;
+            left: 50%;
+            margin-left: -25px;
+            color: #000;
+}
+ 
+    </style>
+</head>
+
+<body>
+    <!-- 背景 -->
+    <canvas id="canvas"></canvas>
+    <script type="text/javascript" src='js/login.js'></script>
+    <script type="text/javascript" src='js/canvas.js'></script>
+    <a class="start" href="index.html">开始游戏</a>
+
+    <p class="onlineNumber"> 在线人数: <span>999</span></p>
+    <a href="login.html" class="exit">退出登录</a>
+</body>
+
+</html>
