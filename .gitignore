@@ -20,3 +20,8 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+root.txt
+.idea/workspace.xml___jb_tmp___
+target/FIR-1.0-SNAPSHOT/resource/css/main.css
+target/FIR-1.0-SNAPSHOT/resource/script/test.js
+target/FIR-1.0-SNAPSHOT/WEB-INF/jsps/rooms/gamePage1.jsp
