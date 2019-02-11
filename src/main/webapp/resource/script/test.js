@@ -9,9 +9,9 @@ function finalll(id,recordString) {
     black.height=7;
     white.height=7;
     white.width=7;
-    black.src = "/FIRGAME/resource/picture/black.png";
-    white.src = "/FIRGAME/resource/picture/white.png";
-    bak.src = "/FIRGAME/resource/picture/bak.jpg";
+    black.src = "http://p3ozmwny3.bkt.clouddn.com/FIR/resource/pictures/black.png";
+    white.src = "http://p3ozmwny3.bkt.clouddn.com/FIR/resource/pictures/white.png";
+    bak.src = "http://p3ozmwny3.bkt.clouddn.com/FIR/resource/pictures/bak.jpg";
 
 var can = document.getElementById(id);
 var ctx = can.getContext("2d"); //获取该canvas的2D绘图环境对象
@@ -19,7 +19,7 @@ ctx.strokeStyle = "#333";
 
 can.setAttribute("width","222px");
 can.setAttribute("height","222px");
-can.setAttribute("background","/FIRGAME/resource/picture/bak.jpg");
+can.setAttribute("background",bak);
 /*var tempIdString="\"#"+id+"\"";
 
     $("#id").css(

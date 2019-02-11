@@ -75,14 +75,14 @@
 <div id="userInf">
     <div id="user1">
         <p>
-            <img src="/FIRGAME/resource/picture/01.png" id="user1_img">
+            <img src="http://p3ozmwny3.bkt.clouddn.com/FIR/resource/pictures/01.png" id="user1_img">
             <span id="playerA">${firGameUserA.userName}</span>
         </p>
     </div>
     <h1>VS</h1>
     <div id="user2">
         <p>
-            <img src="/FIRGAME/resource/picture/01.png" id="user2_img">
+            <img src="http://p3ozmwny3.bkt.clouddn.com/FIR/resource/pictures/01.png" id="user2_img">
             <span id="playerB">${firGameUserB.userName}</span>
         </p>
     </div>
@@ -140,13 +140,13 @@
     var white = new Image();
     //与document.creatElement('img')一样
 
-    black.src = "/FIRGAME/resource/picture/black.png";
-    white.src = "/FIRGAME/resource/picture/white.png";
+    black.src = "http://p3ozmwny3.bkt.clouddn.com/FIR/resource/pictures/black.png";
+    white.src = "http://p3ozmwny3.bkt.clouddn.com/FIR/resource/pictures/white.png";
 
     var user1_img = document.getElementById('user1_img');
     var user2_img = document.getElementById('user2_img');
-    user2_img.src = '/FIRGAME/resource/picture/userOn.png';
-    user1_img.src = '/FIRGAME/resource/picture/user.png';
+    user2_img.src = 'http://p3ozmwny3.bkt.clouddn.com/FIR/resource/pictures/userOn.png';
+    user1_img.src = 'http://p3ozmwny3.bkt.clouddn.com/FIR/resource/pictures/user.png';
 
     var can = document.getElementById('can');
     var ctx = can.getContext("2d"); //获取该canvas的2D绘图环境对象
@@ -174,16 +174,16 @@
     function pageFallChess1(row,col) {
         if (maps[row][col] === 0) {
             if (isBlack) {
-                user2_img.src = '/FIRGAME/resource/picture/user.png'
-                user1_img.src = '/FIRGAME/resource/picture/userOn.png'
+                user2_img.src = 'http://p3ozmwny3.bkt.clouddn.com/FIR/resource/pictures/user.png'
+                user1_img.src = 'http://p3ozmwny3.bkt.clouddn.com/FIR/resource/pictures/userOn.png'
                 ctx.drawImage(black, col * 40, row * 40); //下黑子
                 isBlack = false;
                 maps[row][col] = 2; //黑子为2
                 iswin(2, row, col);
 
             } else {
-                user2_img.src = '/FIRGAME/resource/picture/userOn.png'
-                user1_img.src = '/FIRGAME/resource/picture/user.png'
+                user2_img.src = 'http://p3ozmwny3.bkt.clouddn.com/FIR/resource/pictures/userOn.png'
+                user1_img.src = 'http://p3ozmwny3.bkt.clouddn.com/FIR/resource/pictures/user.png'
                 ctx.drawImage(white, col * 40, row * 40);//下白子
                 isBlack = true;
                 maps[row][col] = 1; //白子为1
